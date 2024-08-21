@@ -1,6 +1,6 @@
 # SafeScape
 
-- **Pitch:** `(Pitch)[https://docs.google.com/document/d/180blNcXaGP0Y6TliKAHLvY6mMpQaxQdncrtV5yz82J4/edit?usp=sharing]`
+- **Pitch:** [Pitch-deck-content](https://docs.google.com/document/d/180blNcXaGP0Y6TliKAHLvY6mMpQaxQdncrtV5yz82J4/edit?usp=sharing)
 
 ### Layman’s Explanation
 
