@@ -7,6 +7,25 @@ Certainly! Here's a complete and functioning code base for your Women Safety Ana
 - SOS Situation Recognition (simplified with dummy gesture recognition)
 - Basic Alert System
 
+### **Directory Structure**
+
+Ensure your project directory is set up as follows:
+
+```
+women_safety_analytics/
+│
+├── scripts/
+│   ├── person_detection.py
+│   ├── gender_classification.py
+│   ├── lone_woman_detection.py
+│   ├── surrounded_detection.py
+│   ├── gesture_recognition.py
+│   ├── alert_system.py
+│   └── main.py
+│
+└── requirements.txt  # List of required libraries
+```
+
 ### **1. Person Detection with MobileNet SSD**
 
 **`scripts/person_detection.py`**:
