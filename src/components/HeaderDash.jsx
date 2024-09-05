@@ -2,6 +2,8 @@ import { useState } from "react";
 import logo from "../assets/safescape_100x100.png";
 import profile from "../assets/profile.png";
 import notification from "../assets/notification.png";
+import Dropdown from "../components/Dropdown";
+import Notifications from "./Notifications";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,12 +21,15 @@ const Header = () => {
 
       {/* Desktop Menu */}
       <nav className="hidden space-x-8 md:flex md:items-center">
-        <span className="text-white rounded-full hover:cursor-pointer">
-          <img className="rounded-full size-6" src={notification} alt="" />
-        </span>
-        <a href="/profile" className="text-white rounded-full ">
-          <img className="rounded-full size-10" src={profile} alt="" />
+        <a href="/dashboard" className="nav-link">
+          Dashboard
         </a>
+        <span className="text-white rounded-full hover:cursor-pointer">
+          <Notifications></Notifications>
+        </span>
+        <span className="text-white rounded-full ">
+          <Dropdown />
+        </span>
       </nav>
 
       {/* Mobile Menu Button */}
@@ -54,6 +59,9 @@ const Header = () => {
             </div>
             <a href="/profile" className="px-4 py-2 text-white rounded ">
               <img className="rounded-full size-10" src={profile} alt="" />
+            </a>
+            <a href="/" className="px-4 py-2 text-white rounded ">
+              <img className="rounded-full size-10" src={notification} alt="" />
             </a>
           </button>
           <nav className="flex flex-col space-y-4">

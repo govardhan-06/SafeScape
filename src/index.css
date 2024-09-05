@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 .nav-link {
+  font-weight: bolder;
   position: relative;
   color: #4a5568; /* Tailwind's gray-700 */
   text-decoration: none;

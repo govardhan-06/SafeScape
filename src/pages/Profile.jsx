@@ -5,7 +5,7 @@ const Profile = ({ user }) => {
   return (
     <>
       <HeaderDash />
-      <div className="max-w-md p-6 mx-auto bg-white rounded-lg shadow-md">
+      <div className="p-6 mx-4 bg-white rounded-lg shadow-md max-w-screen">
         <h2 className="mb-4 text-2xl font-bold">User Profile</h2>
         <div className="mb-4">
           <span className="font-semibold">Name:</span>

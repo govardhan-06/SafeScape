@@ -17,9 +17,9 @@ const Header = () => {
 
       {/* Desktop Menu */}
       <nav className="hidden space-x-4 md:flex md:items-center">
-        <a href="/dashboard" className="nav-link">
+        {/* <a href="/dashboard" className="nav-link">
           Dashboard
-        </a>
+        </a> */}
         <a
           href="/login"
           className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-700">

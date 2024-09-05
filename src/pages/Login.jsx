@@ -1,70 +1,80 @@
+import { useNavigate } from "react-router-dom";
+import supabase from "../config/SupabaseClient";
 import { useState } from "react";
-import Header from "../components/Header";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate();
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const [email, setEmail] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [error, setError] = useState(null);
+  const [showMessage, setShowMessage] = useState(false); // State to manage pop-up message
+
+  const updateLoginState = () => {
+    setIsLoggedIn((prev) => !prev);
   };
 
-  const handleSubmit = (e) => {
+  // Email validation function using regex
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const auth = async (e) => {
     e.preventDefault();
-    // Basic client-side validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
+
+    // Check if email is valid
+    if (!isValidEmail(email)) {
       setError("Please enter a valid email address.");
       return;
     }
 
-    // Simulate form submission
-    setError("");
-    setIsSubmitted(true);
-    setEmail("");
+    let { data, error } = await supabase.auth.signInWithOtp({
+      email: email,
+    });
+
+    if (data) {
+      // Display pop-up message on successful request
+      setShowMessage(true);
+      setTimeout(() => {
+        setShowMessage(false);
+        navigate("/", { replace: true });
+      }, 10000); // Redirect after 2 seconds
+    }
+
+    if (error) {
+      setError(error.message);
+    }
   };
 
   return (
-    <>
-      <Header></Header>
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="w-full max-w-sm p-8 bg-white rounded-lg shadow-md">
-          <h2 className="mb-4 text-2xl font-bold text-center">Login/SignUp</h2>
-          {isSubmitted && (
-            <div className="p-4 mb-4 text-blue-800 bg-blue-100 rounded">
-              <p>Check your inbox to log in securely.</p>
-            </div>
-          )}
-          {error && (
-            <div className="p-4 mb-4 text-red-800 bg-red-100 rounded">
-              <p>{error}</p>
-            </div>
-          )}
-          <form onSubmit={handleSubmit}>
-            <label
-              htmlFor="email"
-              className="block mb-2 text-sm font-medium text-gray-700">
-              Email Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              onChange={handleEmailChange}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
-              required
-            />
-            <button
-              type="submit"
-              className="w-full px-4 py-2 mt-4 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              Submit
-            </button>
-          </form>
-        </div>
-      </div>
-    </>
+    <div className="flex items-center justify-center ">
+      <form
+        className="flex border-2 border-black bg-gray-200 p-4 rounded-xl w-[50%] flex-col items-center justify-center space-y-4 m-4"
+        onSubmit={auth}>
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="user@example.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full p-2 rounded-lg"
+        />
+        <button className="px-4 py-2 bg-green-400 rounded-xl">
+          {isLoggedIn ? "Login" : "Sign up"}
+        </button>
+        <span className="hover:cursor-pointer" onClick={updateLoginState}>
+          {isLoggedIn
+            ? "Don't have an account? Sign up"
+            : "Already have an account? Login"}
+        </span>
+        {error && <p className="text-red-500">{error}</p>}
+        {showMessage && (
+          <p className="text-green-500">Check your inbox to log in securely.</p>
+        )}
+      </form>
+    </div>
   );
 };
 
