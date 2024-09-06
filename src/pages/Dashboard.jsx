@@ -52,7 +52,7 @@ const Dashboard = () => {
           </div>
           {/* Large Left Rectangle */}
           <div className="flex-col flex-1 bg-white rounded-lg">
-            <Speedometer percentage={90} />
+            <Speedometer percentage={95} />
             <Logs></Logs>
           </div>
         </div>

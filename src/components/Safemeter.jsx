@@ -12,15 +12,15 @@ const Speedometer = ({ percentage }) => {
         maxValue={100}
         value={percentage}
         needleColor="red"
-        startColor="#00ff00"
-        segments={10}
-        endColor="#ff0000"
+        startColor="#ff0000"
+        segments={5}
+        endColor="#00ff00"
         width={300}
         height={175}
         needleTransitionDuration={2000}
         needleTransition="easeElastic"
-        customSegmentStops={[0, 25, 50, 75, 100]}
-        currentValueText={`Fill Level: ${percentage}%`}
+        // customSegmentStops={[0, 25, 50, 75, 100]}
+        currentValueText={`${percentage}% `}
         textColor="#000000"
       />
     </div>
