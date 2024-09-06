@@ -1,10 +1,38 @@
 import HeaderDash from "../components/HeaderDash";
+import Speedometer from "../components/Safemeter";
+import Logs from "../components/Logs";
+import UserLocationMap from "../components/Map";
+import PastAlerts from "../components/PastAlerts";
+
+const sampleAlerts = [
+  {
+    type: "Critical",
+    time: "2024-09-01 14:32",
+    message: "Unauthorized entry detected",
+  },
+  {
+    type: "Warning",
+    time: "2024-09-01 13:20",
+    message: "High temperature alert",
+  },
+  { type: "Info", time: "2024-08-31 12:50", message: "System rebooted" },
+  {
+    type: "Critical",
+    time: "2024-08-31 11:10",
+    message: "Motion detected in restricted area",
+  },
+  {
+    type: "Warning",
+    time: "2024-08-30 09:15",
+    message: "System overheat warning",
+  },
+];
 
 const Dashboard = () => {
   return (
     <>
       <HeaderDash></HeaderDash>
-      <div className="flex h-screen px-4 py-2 space-x-4">
+      <div className="flex h-screen px-4 pb-4 space-x-4">
         {/* Left Column */}
         <div className="flex flex-col w-2/3 space-y-4">
           {/* Top Horizontal Rectangle (spans only the left column) */}
@@ -23,14 +51,21 @@ const Dashboard = () => {
             </span>
           </div>
           {/* Large Left Rectangle */}
-          <div className="flex-1 bg-white rounded-lg"></div>
+          <div className="flex-col flex-1 bg-white rounded-lg">
+            <Speedometer percentage={90} />
+            <Logs></Logs>
+          </div>
         </div>
         {/* Right Column */}
         <div className="flex flex-col w-1/3 space-y-4">
           {/* Top Right Rectangle */}
-          <div className="flex-1 bg-white rounded-lg"></div>
+          <div className="p-4 bg-white rounded-lg h-1/2">
+            <PastAlerts alerts={sampleAlerts}></PastAlerts>
+          </div>
           {/* Bottom Right Rectangle */}
-          <div className="flex-1 bg-white rounded-lg"></div>
+          <div className="bg-white rounded-lg h-1/2">
+            <UserLocationMap></UserLocationMap>
+          </div>
         </div>
       </div>
     </>
