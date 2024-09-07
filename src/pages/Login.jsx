@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import supabase from "../config/SupabaseClient";
 import { useState } from "react";
 import Header from "../components/Header";
+import Signup from "./SignUp";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ const Login = () => {
       setTimeout(() => {
         setShowMessage(false);
         navigate("/", { replace: true });
-      }, 10000); // Redirect after 2 seconds
+      }, 5000); // Redirect after 5 seconds
     }
 
     if (error) {
@@ -51,51 +52,43 @@ const Login = () => {
   return (
     <>
       <Header />
-      <div className="flex items-center justify-center ">
-        <form
-          className="flex flex-col items-center justify-center p-4 m-4 space-y-4 bg-white md:w-1/3 rounded-xl"
-          onSubmit={auth}>
-          {isLoggedIn ? (
+      {!isLoggedIn ? (
+        <Signup />
+      ) : (
+        <div className="flex items-center justify-center ">
+          <form
+            className="flex flex-col items-center justify-center p-4 m-4 space-y-4 bg-white md:w-1/3 rounded-xl"
+            onSubmit={auth}>
             <label htmlFor="email" className="text-2xl font-semibold">
               Login
             </label>
-          ) : (
-            <label htmlFor="email" className="text-2xl font-semibold">
-              SignUp
-            </label>
-          )}
-          <input
-            type="email"
-            id="email"
-            placeholder="user@example.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 border-2 border-black rounded-lg"
-          />
-          <button className="px-4 py-2 font-bold text-white bg-purple-500 rounded-lg hover:bg-purple-700">
-            {isLoggedIn ? "Login" : "Sign up"}
-          </button>
-          <span
-            className="hover:cursor-pointer hover:font-semibold"
-            onClick={updateLoginState}>
-            {isLoggedIn ? (
+            <input
+              type="email"
+              id="email"
+              placeholder="user@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded-lg"
+            />
+            <button className="px-4 py-2 font-bold text-white bg-purple-500 rounded-lg hover:bg-purple-700">
+              Login
+            </button>
+            <span
+              className="hover:cursor-pointer hover:font-semibold"
+              onClick={updateLoginState}>
               <span>
                 Don&apos;t have an account? <u>SignUp</u>
               </span>
-            ) : (
-              <span>
-                Already have an account? <u>Login</u>
-              </span>
+            </span>
+            {error && <p className="text-red-500">{error}</p>}
+            {showMessage && (
+              <p className="text-green-500">
+                Check your inbox to log in securely.
+              </p>
             )}
-          </span>
-          {error && <p className="text-red-500">{error}</p>}
-          {showMessage && (
-            <p className="text-green-500">
-              Check your inbox to log in securely.
-            </p>
-          )}
-        </form>
-      </div>
+          </form>
+        </div>
+      )}
     </>
   );
 };

@@ -12,12 +12,6 @@ const Dropdown = () => {
     navigate("/profile");
   };
 
-  const handleLogout = () => {
-    setIsOpen(false);
-    // Perform logout action here (e.g., clearing session or tokens)
-    navigate("/login");
-  };
-
   return (
     <div className="relative inline-block text-left">
       <img
@@ -35,9 +29,7 @@ const Dropdown = () => {
               className="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100 hover:text-gray-900">
               Profile
             </button>
-            <button
-              onClick={handleLogout}
-              className="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+            <button className="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100 hover:text-gray-900">
               <Logout />
             </button>
           </div>
