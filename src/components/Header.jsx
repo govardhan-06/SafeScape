@@ -12,17 +12,19 @@ const Header = () => {
     <header className="flex items-center justify-between px-4 py-2 m-4 bg-white rounded-lg shadow-md">
       <div className="flex items-center text-2xl font-bold">
         <img className="rounded-full size-12" src={logo} alt="" />
-        <a href="/">SafeScape</a>
+        <a href="/">
+          Safe<b className="font-bold text-red-600">Scape</b>
+        </a>
       </div>
 
       {/* Desktop Menu */}
       <nav className="hidden space-x-4 md:flex md:items-center">
-        {/* <a href="/dashboard" className="nav-link">
+        <a href="/login" className="nav-link">
           Dashboard
-        </a> */}
+        </a>
         <a
           href="/login"
-          className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-700">
+          className="px-4 py-2 font-bold text-white bg-purple-500 rounded-lg hover:bg-purple-700">
           Login
         </a>
       </nav>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import logo from "../assets/safescape_100x100.png";
 import profile from "../assets/profile.png";
 import notification from "../assets/notification.png";
@@ -16,7 +17,9 @@ const Header = () => {
     <header className="flex items-center justify-between px-4 py-2 m-4 bg-white rounded-lg shadow-md">
       <div className="flex items-center text-2xl font-bold">
         <img className="rounded-full size-12" src={logo} alt="" />
-        <a href="/">SafeScape</a>
+        <a href="/">
+          Safe<b className="font-bold text-red-600">Scape</b>
+        </a>
       </div>
 
       {/* Desktop Menu */}

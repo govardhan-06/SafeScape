@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import supabase from "../config/SupabaseClient";
 import { useState } from "react";
+import Header from "../components/Header";
 
 const Login = () => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [error, setError] = useState(null);
   const [showMessage, setShowMessage] = useState(false); // State to manage pop-up message
 
@@ -48,33 +49,54 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center ">
-      <form
-        className="flex border-2 border-black bg-gray-200 p-4 rounded-xl w-[50%] flex-col items-center justify-center space-y-4 m-4"
-        onSubmit={auth}>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="user@example.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-2 rounded-lg"
-        />
-        <button className="px-4 py-2 bg-green-400 rounded-xl">
-          {isLoggedIn ? "Login" : "Sign up"}
-        </button>
-        <span className="hover:cursor-pointer" onClick={updateLoginState}>
-          {isLoggedIn
-            ? "Don't have an account? Sign up"
-            : "Already have an account? Login"}
-        </span>
-        {error && <p className="text-red-500">{error}</p>}
-        {showMessage && (
-          <p className="text-green-500">Check your inbox to log in securely.</p>
-        )}
-      </form>
-    </div>
+    <>
+      <Header />
+      <div className="flex items-center justify-center ">
+        <form
+          className="flex flex-col items-center justify-center w-1/3 p-4 m-4 space-y-4 bg-white rounded-xl"
+          onSubmit={auth}>
+          {isLoggedIn ? (
+            <label htmlFor="email" className="text-2xl font-semibold">
+              Login
+            </label>
+          ) : (
+            <label htmlFor="email" className="text-2xl font-semibold">
+              SignUp
+            </label>
+          )}
+          <input
+            type="email"
+            id="email"
+            placeholder="user@example.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full p-2 border-2 border-black rounded-lg"
+          />
+          <button className="px-4 py-2 font-bold text-white bg-purple-500 rounded-lg hover:bg-purple-700">
+            {isLoggedIn ? "Login" : "Sign up"}
+          </button>
+          <span
+            className="hover:cursor-pointer hover:font-semibold"
+            onClick={updateLoginState}>
+            {isLoggedIn ? (
+              <span>
+                Don&apos;t have an account? <u>SignUp</u>
+              </span>
+            ) : (
+              <span>
+                Already have an account? <u>Login</u>
+              </span>
+            )}
+          </span>
+          {error && <p className="text-red-500">{error}</p>}
+          {showMessage && (
+            <p className="text-green-500">
+              Check your inbox to log in securely.
+            </p>
+          )}
+        </form>
+      </div>
+    </>
   );
 };
 
