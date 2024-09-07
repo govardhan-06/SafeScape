@@ -32,7 +32,7 @@ const Dashboard = () => {
   return (
     <>
       <HeaderDash></HeaderDash>
-      <div className="flex flex-col h-screen px-4 pb-4 lg:space-x-4 md:flex-row ">
+      <div className="flex flex-col h-screen px-4 pb-4 lg:space-x-4 lg:flex-row ">
         {/* Left Column */}
         <div className="flex flex-col space-y-4 lg:w-2/3">
           {/* Top Horizontal Rectangle (spans only the left column) */}
