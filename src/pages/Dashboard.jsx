@@ -32,9 +32,9 @@ const Dashboard = () => {
   return (
     <>
       <HeaderDash></HeaderDash>
-      <div className="flex h-screen px-4 pb-4 space-x-4 text-sm md:text-base">
+      <div className="flex flex-col h-screen px-4 pb-4 lg:space-x-4 md:flex-row ">
         {/* Left Column */}
-        <div className="flex flex-col w-2/3 space-y-4">
+        <div className="flex flex-col space-y-4 lg:w-2/3">
           {/* Top Horizontal Rectangle (spans only the left column) */}
           <div className="flex items-center h-16 space-x-6 bg-white rounded-lg justify-evenly">
             <span className="px-2 py-1 hover:bg-gray-200 hover:rounded-full hover:cursor-pointer ">
@@ -57,7 +57,7 @@ const Dashboard = () => {
           </div>
         </div>
         {/* Right Column */}
-        <div className="flex flex-col w-1/3 space-y-4">
+        <div className="flex flex-col mt-4 space-y-4 lg:mt-0 lg:w-1/3">
           {/* Top Right Rectangle */}
           <div className="p-4 bg-white rounded-lg h-1/2">
             <PastAlerts alerts={sampleAlerts}></PastAlerts>
