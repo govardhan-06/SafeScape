@@ -53,7 +53,7 @@ const Login = () => {
       <Header />
       <div className="flex items-center justify-center ">
         <form
-          className="flex flex-col items-center justify-center w-1/3 p-4 m-4 space-y-4 bg-white rounded-xl"
+          className="flex flex-col items-center justify-center p-4 m-4 space-y-4 bg-white md:w-1/3 rounded-xl"
           onSubmit={auth}>
           {isLoggedIn ? (
             <label htmlFor="email" className="text-2xl font-semibold">
