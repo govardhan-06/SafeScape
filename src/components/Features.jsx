@@ -123,6 +123,167 @@ const KeyFeatures = () => {
         </svg>
       ),
     },
+    {
+      title: "Advanced Computer Vision",
+      description:
+        "AI powered computer vision to detect any potential threats and alert the authorities.",
+      icon: (
+        <svg
+          className="mx-auto size-12"
+          fill="#ef4444"
+          height="200px"
+          width="200px"
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 512 512"
+          xmlSpace="preserve">
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            strokeLinecap="round"
+            strokeLinejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            {" "}
+            <g>
+              {" "}
+              <g>
+                {" "}
+                <g>
+                  {" "}
+                  <path d="M506.245,220.091c-69.79-74.59-157.899-112.363-246.339-113.374c-0.728-0.019-1.46-0.021-2.191-0.029 c-0.49-0.002-0.979-0.019-1.469-0.019c-0.082,0-0.164-0.003-0.247-0.003c-1.399,0-2.792,0.023-4.182,0.061 c-88.164,1.228-176.113,38.985-246.025,113.324c-8.072,8.583-7.657,22.084,0.925,30.156c8.583,8.072,22.084,7.657,30.156-0.925 c27.43-29.167,57.876-51.949,90.009-68.348c-12.849,22.055-20.216,47.698-20.216,75.067c0,82.481,66.853,149.333,149.333,149.333 S405.333,338.481,405.333,256c0-27.469-7.423-53.2-20.36-75.31c32.217,16.41,62.706,39.257,90.116,68.552 c8.05,8.603,21.55,9.052,30.153,1.003C513.846,242.195,514.294,228.695,506.245,220.091z M362.667,256 c0,58.917-47.75,106.667-106.667,106.667S149.333,314.917,149.333,256c0-57.89,46.102-104.996,103.599-106.62 c1.098-0.013,2.195-0.044,3.293-0.044c0.191,0,0.38,0.006,0.571,0.007c0.668,0.001,1.335,0.02,2.003,0.027 C316.422,150.854,362.667,198.019,362.667,256z"></path>{" "}
+                  <path d="M256,170.667c-47.153,0-85.333,38.181-85.333,85.333c0,11.782,9.551,21.333,21.333,21.333s21.333-9.551,21.333-21.333 c0-23.589,19.078-42.667,42.667-42.667c11.782,0,21.333-9.551,21.333-21.333C277.333,180.218,267.782,170.667,256,170.667z"></path>{" "}
+                </g>{" "}
+              </g>{" "}
+            </g>{" "}
+          </g>
+        </svg>
+      ),
+    },
+    {
+      title: "Seamless Integration",
+      description:
+        "Seamless integration with existing security systems and hardware.",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          className="mx-auto size-12"
+          xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            strokeLinecap="round"
+            strokeLinejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            {" "}
+            <circle
+              cx="12"
+              cy="12"
+              r="3"
+              stroke="#ef4444"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"></circle>{" "}
+            <circle
+              cx="12"
+              cy="4"
+              r="2"
+              stroke="#ef4444"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"></circle>{" "}
+            <circle
+              cx="20"
+              cy="12"
+              r="2"
+              stroke="#ef4444"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"></circle>{" "}
+            <circle
+              cx="4"
+              cy="12"
+              r="2"
+              stroke="#ef4444"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"></circle>{" "}
+            <circle
+              cx="12"
+              cy="20"
+              r="2"
+              stroke="#ef4444"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"></circle>{" "}
+            <path
+              d="M12 6V9"
+              stroke="#ef4444"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"></path>{" "}
+            <path
+              d="M15 12H18"
+              stroke="#ef4444"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"></path>{" "}
+            <path
+              d="M12 15V18"
+              stroke="#ef4444"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"></path>{" "}
+            <path
+              d="M9 12H6"
+              stroke="#ef4444"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"></path>{" "}
+          </g>
+        </svg>
+      ),
+    },
+    {
+      title: "Predictive Analytics",
+      description:
+        "Advanced analytics to predict potential threats and take necessary actions.",
+      icon: (
+        <svg
+          className="mx-auto size-12"
+          viewBox="0 -35.5 170 170"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            strokeLinecap="round"
+            strokeLinejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            {" "}
+            <g clipPath="url(#clip0)">
+              {" "}
+              <path
+                d="M159.524 0.393145C156.399 0.123788 154.058 0.750571 152.37 2.30179C150.171 4.32164 149.108 7.85474 149.031 13.4077C147.212 15.4816 145.399 17.5445 143.593 19.5965C139.42 24.3401 135.106 29.2446 130.918 34.0834C126.73 38.9222 122.505 43.8811 118.419 48.6762C116.665 50.7333 114.91 52.7923 113.152 54.8533C112.677 54.843 112.182 54.8083 111.663 54.7723C110.128 54.5701 108.57 54.6493 107.064 55.0063C105.06 55.6145 103.869 55.0462 102.107 53.6307C92.4085 45.8476 83.3948 39.8002 74.55 35.1446C73.8555 34.8254 73.2439 34.3489 72.7624 33.752C72.2816 33.1552 71.9436 32.4542 71.7758 31.704C71.0743 29.0054 69.3499 26.6922 66.9731 25.2626C64.5969 23.833 61.7583 23.4013 59.0692 24.0605C56.3348 24.7041 53.9423 26.364 52.3692 28.7085C50.7961 31.0531 50.1584 33.9097 50.5836 36.7075C50.6933 37.4468 50.826 38.1861 50.9536 38.89L51.056 39.4685L15.5387 73.8969C15.3582 73.8795 15.1783 73.8596 14.9991 73.8409C14.4072 73.7767 13.7946 73.7124 13.1805 73.6963C7.30631 73.5259 3.69542 76.116 1.80964 81.8503C0.395138 86.151 1.94355 89.9895 3.23178 92.5031C4.10457 94.3089 5.43379 95.8517 7.0859 96.9748C8.73803 98.0985 10.6546 98.7639 12.6428 98.9034C12.843 98.9143 13.0427 98.9195 13.2422 98.9201C15.156 98.8912 17.0327 98.382 18.7028 97.4396C20.3728 96.4965 21.7836 95.1497 22.8082 93.5201C25.8693 88.8825 26.3451 84.5362 24.2534 80.2489L58.7173 47.1571L68.318 44.1679L96.7993 63.863C97.0238 68.0989 98.0703 71.2753 100.173 74.1232C101.397 75.8724 103.174 77.1517 105.213 77.7521C107.252 78.3519 109.432 78.2368 111.398 77.4262C117.081 75.2495 120.237 70.4261 120.088 64.1697L154.653 20.8963C159.556 21.8606 163.362 21.4107 165.969 19.5528C167.985 18.1186 169.212 15.895 169.615 12.9436C169.846 11.4554 169.772 9.93496 169.397 8.4767C169.022 7.01851 168.354 5.65349 167.434 4.46625C166.462 3.27794 165.259 2.30335 163.898 1.60274C162.538 0.902131 161.049 0.490445 159.524 0.393145Z"
+                fill="#ef4444"></path>{" "}
+            </g>{" "}
+            <defs>
+              {" "}
+              <clipPath id="clip0">
+                {" "}
+                <rect
+                  width="169"
+                  height="99"
+                  fill="white"
+                  transform="translate(0.777344)"></rect>{" "}
+              </clipPath>{" "}
+            </defs>{" "}
+          </g>
+        </svg>
+      ),
+    },
   ];
 
   return (
