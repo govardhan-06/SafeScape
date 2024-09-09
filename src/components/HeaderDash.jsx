@@ -17,7 +17,7 @@ const Header = () => {
     <header className="flex items-center justify-between px-4 py-2 m-4 bg-white rounded-lg shadow-md">
       <div className="flex items-center text-2xl font-bold">
         <img className="rounded-full size-12" src={logo} alt="" />
-        <a href="/">
+        <a className="hidden md:block" href="/">
           Safe<b className="font-bold text-red-600">Scape</b>
         </a>
       </div>
@@ -64,7 +64,11 @@ const Header = () => {
               <img className="rounded-full size-10" src={profile} alt="" />
             </a>
             <a href="/" className="px-4 py-2 text-white rounded ">
-              <img className="rounded-full size-10" src={notification} alt="" />
+              <img
+                className="rounded-full size-8 md:size-10"
+                src={notification}
+                alt=""
+              />
             </a>
           </button>
           <nav className="flex flex-col space-y-4">

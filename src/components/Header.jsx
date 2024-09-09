@@ -12,7 +12,7 @@ const Header = () => {
     <header className="flex items-center justify-between px-4 py-2 m-4 bg-white rounded-lg shadow-md">
       <div className="flex items-center text-2xl font-bold">
         <img className="rounded-full size-12" src={logo} alt="" />
-        <a href="/">
+        <a href="/" className="hidden md:block">
           Safe<b className="font-bold text-red-600">Scape</b>
         </a>
       </div>
@@ -57,10 +57,7 @@ const Header = () => {
             <a href="/" className="nav-link">
               Home
             </a>
-            <a href="/about" className="nav-link">
-              About
-            </a>
-            <a href="/dashboard" className="nav-link">
+            <a href="/login" className="nav-link">
               Dashboard
             </a>
             <a
