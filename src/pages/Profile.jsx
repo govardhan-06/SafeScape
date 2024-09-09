@@ -50,7 +50,7 @@ const Profile = () => {
   return (
     <>
       <HeaderDash></HeaderDash>
-      <div className="flex justify-center h-screen">
+      <div className="flex justify-center ">
         {loading ? (
           <p>Loading...</p>
         ) : errorMessage ? (
