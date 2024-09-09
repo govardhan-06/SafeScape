@@ -16,8 +16,13 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<LandscapeComponent />} />
+        <Route path="login" element={<Login />} />
+        <Route path="dashboard" element={<LandscapeComponent />}>
+          <Route path="camera1" element={<Profile />} />
+          <Route path="camera2" element={<Profile />} />
+          <Route path="camera3" element={<Profile />} />
+          <Route path="camera4" element={<Profile />} />
+        </Route>
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
