@@ -95,7 +95,7 @@ const Signup = () => {
     <div className="flex justify-center">
       <form
         onSubmit={functionCaller}
-        className="w-full max-w-lg p-6 space-y-4 bg-white rounded-lg shadow-lg">
+        className="w-3/4 p-6 space-y-4 bg-white rounded-lg shadow-lg md:max-w-lg lg:w-full ">
         <h2 className="mb-4 text-2xl font-semibold text-center">Signup</h2>
 
         {errorMessage && <p className="text-red-500">{errorMessage}</p>}
