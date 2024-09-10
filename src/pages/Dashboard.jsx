@@ -131,7 +131,50 @@ const Dashboard = () => {
             <PastAlerts alerts={sampleAlerts} />
           </div>
           <div className="bg-white rounded-lg h-1/2">
-            <UserLocationMap></UserLocationMap>
+            {/* <UserLocationMap></UserLocationMap> */}
+
+            <Routes>
+              <Route
+                path="camera1"
+                element={
+                  <CameraData cameraName="camera1">
+                    {({ safetymeter, latitude, longitude }) => (
+                      <UserLocationMap lat={latitude} lon={longitude} />
+                    )}
+                  </CameraData>
+                }
+              />
+              <Route
+                path="camera2"
+                element={
+                  <CameraData cameraName="camera2">
+                    {({ safetymeter, latitude, longitude }) => (
+                      <UserLocationMap lat={latitude} lon={longitude} />
+                    )}
+                  </CameraData>
+                }
+              />
+              <Route
+                path="camera3"
+                element={
+                  <CameraData cameraName="camera3">
+                    {({ safetymeter, latitude, longitude }) => (
+                      <UserLocationMap lat={latitude} lon={longitude} />
+                    )}
+                  </CameraData>
+                }
+              />
+              <Route
+                path="camera4"
+                element={
+                  <CameraData cameraName="camera4">
+                    {({ safetymeter, latitude, longitude }) => (
+                      <UserLocationMap lat={latitude} lon={longitude} />
+                    )}
+                  </CameraData>
+                }
+              />
+            </Routes>
           </div>
         </div>
       </div>
