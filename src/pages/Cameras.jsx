@@ -1,7 +1,24 @@
 import { useEffect, useState } from "react";
-import supabase from "../config/SupabaseClient";
 import PropTypes from "prop-types";
+import supabase from "../config/SupabaseClient";
 import HeaderDash from "../components/HeaderDash";
+
+// Icons for camera status
+const StatusIcon = ({ status }) => {
+  return (
+    <div className="absolute top-2 right-2">
+      {status == "true" ? (
+        <div className="bg-green-500 rounded-full size-4" title="Active"></div>
+      ) : (
+        <div className="bg-red-500 rounded-full size-4" title="Inactive"></div>
+      )}
+    </div>
+  );
+};
+
+StatusIcon.propTypes = {
+  status: PropTypes.string.isRequired,
+};
 
 const Cameras = () => {
   const [cameras, setCameras] = useState([]);
@@ -13,7 +30,7 @@ const Cameras = () => {
       try {
         const { data, error } = await supabase
           .from("cameras")
-          .select("created_at, cam_id, name, latitude, longitude");
+          .select("created_at, cam_id, name, latitude, longitude, status");
 
         if (error) throw error;
         setCameras(data);
@@ -33,13 +50,16 @@ const Cameras = () => {
 
   return (
     <>
-      <HeaderDash></HeaderDash>
+      <HeaderDash />
       <div className="container p-4 mx-auto">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {cameras.map((camera) => (
             <div
               key={camera.cam_id}
-              className="p-4 bg-white border rounded-lg shadow-lg">
+              className="relative p-4 bg-white border rounded-lg shadow-lg">
+              {/* Status Icon */}
+              <StatusIcon status={camera.status} />
+
               <h2 className="mb-2 text-lg font-bold">{camera.name}</h2>
               <p className="text-sm text-gray-600">
                 Camera ID: {camera.cam_id}
@@ -59,11 +79,6 @@ const Cameras = () => {
       </div>
     </>
   );
-};
-
-Cameras.propTypes = {
-  supabaseUrl: PropTypes.string,
-  supabaseAnonKey: PropTypes.string,
 };
 
 export default Cameras;
