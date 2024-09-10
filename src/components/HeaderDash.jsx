@@ -24,6 +24,9 @@ const Header = () => {
 
       {/* Desktop Menu */}
       <nav className="hidden space-x-8 md:flex md:items-center">
+        <a href="/cameras" className="nav-link">
+          Cameras
+        </a>
         <a href="/dashboard" className="nav-link">
           Dashboard
         </a>

@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import LandscapeComponent from "./components/Landscape";
+import Cameras from "./pages/Cameras";
 
 const App = () => {
   // const user = {
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="camera4" element={<Profile />} />
         </Route>
         <Route path="/profile" element={<Profile />} />
+        <Route path="/cameras" element={<Cameras />} />
       </Routes>
     </Router>
   );
