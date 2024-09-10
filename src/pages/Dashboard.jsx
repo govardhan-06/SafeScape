@@ -71,7 +71,7 @@ const Dashboard = () => {
                       <>
                         <Speedometer percentage={safetymeter} />
                         <Logs />
-                        <UserLocationMap lat={latitude} lon={longitude} />
+                        {/* <UserLocationMap lat={latitude} lon={longitude} /> */}
                       </>
                     )}
                   </CameraData>
@@ -85,7 +85,7 @@ const Dashboard = () => {
                       <>
                         <Speedometer percentage={safetymeter} />
                         <Logs />
-                        <UserLocationMap lat={latitude} lon={longitude} />
+                        {/* <UserLocationMap lat={latitude} lon={longitude} /> */}
                       </>
                     )}
                   </CameraData>
@@ -99,7 +99,7 @@ const Dashboard = () => {
                       <>
                         <Speedometer percentage={safetymeter} />
                         <Logs />
-                        <UserLocationMap lat={latitude} lon={longitude} />
+                        {/* <UserLocationMap lat={latitude} lon={longitude} /> */}
                       </>
                     )}
                   </CameraData>
@@ -113,7 +113,7 @@ const Dashboard = () => {
                       <>
                         <Speedometer percentage={safetymeter} />
                         <Logs />
-                        <UserLocationMap lat={latitude} lon={longitude} />
+                        {/* <UserLocationMap lat={latitude} lon={longitude} /> */}
                       </>
                     )}
                   </CameraData>
@@ -129,6 +129,9 @@ const Dashboard = () => {
           {/* Top Right Rectangle */}
           <div className="p-4 bg-white rounded-lg h-1/2">
             <PastAlerts alerts={sampleAlerts} />
+          </div>
+          <div className="bg-white rounded-lg h-1/2">
+            <UserLocationMap></UserLocationMap>
           </div>
         </div>
       </div>
