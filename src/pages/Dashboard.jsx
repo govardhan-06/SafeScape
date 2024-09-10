@@ -4,6 +4,7 @@ import Speedometer from "../components/Safemeter";
 import Logs from "../components/Logs";
 import UserLocationMap from "../components/Map";
 import PastAlerts from "../components/PastAlerts";
+import CameraData from "../components/CameraData"; // Fetch camera data from Supabase
 
 const sampleAlerts = [
   {
@@ -42,7 +43,7 @@ const Dashboard = () => {
         {/* Left Column */}
         <div className="flex flex-col space-y-4 lg:w-2/3">
           {/* Top Horizontal Rectangle for Cameras */}
-          <div className="flex items-center h-16 space-x-6 bg-white rounded-lg justify-evenly">
+          <div className="flex items-center h-16 py-2 space-x-6 bg-white rounded-lg justify-evenly">
             {["camera1", "camera2", "camera3", "camera4"].map(
               (camera, index) => (
                 <Link
@@ -60,9 +61,67 @@ const Dashboard = () => {
           </div>
           {/* Large Left Rectangle */}
           <div className="flex-col flex-1 bg-white rounded-lg">
-            <Speedometer percentage={95} />{" "}
-            {/* Speedometer Component, vary percentage based on route */}
-            <Logs />
+            {/* Fetch camera data dynamically */}
+            <Routes>
+              <Route
+                path="camera1"
+                element={
+                  <CameraData cameraName="camera1">
+                    {({ safetymeter, latitude, longitude }) => (
+                      <>
+                        <Speedometer percentage={safetymeter} />
+                        <Logs />
+                        <UserLocationMap lat={latitude} lon={longitude} />
+                      </>
+                    )}
+                  </CameraData>
+                }
+              />
+              <Route
+                path="camera2"
+                element={
+                  <CameraData cameraName="camera2">
+                    {({ safetymeter, latitude, longitude }) => (
+                      <>
+                        <Speedometer percentage={safetymeter} />
+                        <Logs />
+                        <UserLocationMap lat={latitude} lon={longitude} />
+                      </>
+                    )}
+                  </CameraData>
+                }
+              />
+              <Route
+                path="camera3"
+                element={
+                  <CameraData cameraName="camera3">
+                    {({ safetymeter, latitude, longitude }) => (
+                      <>
+                        <Speedometer percentage={safetymeter} />
+                        <Logs />
+                        <UserLocationMap lat={latitude} lon={longitude} />
+                      </>
+                    )}
+                  </CameraData>
+                }
+              />
+              <Route
+                path="camera4"
+                element={
+                  <CameraData cameraName="camera4">
+                    {({ safetymeter, latitude, longitude }) => (
+                      <>
+                        <Speedometer percentage={safetymeter} />
+                        <Logs />
+                        <UserLocationMap lat={latitude} lon={longitude} />
+                      </>
+                    )}
+                  </CameraData>
+                }
+              />
+              {/* Default Route Redirect */}
+              <Route path="/" element={<Navigate to="/dashboard/camera1" />} />
+            </Routes>
           </div>
         </div>
         {/* Right Column */}
@@ -71,21 +130,8 @@ const Dashboard = () => {
           <div className="p-4 bg-white rounded-lg h-1/2">
             <PastAlerts alerts={sampleAlerts} />
           </div>
-          {/* Bottom Right Rectangle */}
-          <div className="bg-white rounded-lg h-1/2">
-            <UserLocationMap /> {/* Map Component, add lat and long */}
-          </div>
         </div>
       </div>
-
-      {/* Camera Routes */}
-      <Routes>
-        <Route path="/" element={<Navigate to="/dashboard/camera1" />} />
-        <Route path="camera1" element={<div>Camera 1 View</div>} />
-        <Route path="camera2" element={<div>Camera 2 View</div>} />
-        <Route path="camera3" element={<div>Camera 3 View</div>} />
-        <Route path="camera4" element={<div>Camera 4 View</div>} />
-      </Routes>
     </>
   );
 };
