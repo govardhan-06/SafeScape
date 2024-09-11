@@ -67,7 +67,7 @@ const Dashboard = () => {
                 path="camera1"
                 element={
                   <CameraData cameraName="camera1">
-                    {({ safetymeter, latitude, longitude }) => (
+                    {({ safetymeter }) => (
                       <>
                         <Speedometer percentage={safetymeter} />
                         <Logs />
@@ -81,7 +81,7 @@ const Dashboard = () => {
                 path="camera2"
                 element={
                   <CameraData cameraName="camera2">
-                    {({ safetymeter, latitude, longitude }) => (
+                    {({ safetymeter }) => (
                       <>
                         <Speedometer percentage={safetymeter} />
                         <Logs />
@@ -95,7 +95,7 @@ const Dashboard = () => {
                 path="camera3"
                 element={
                   <CameraData cameraName="camera3">
-                    {({ safetymeter, latitude, longitude }) => (
+                    {({ safetymeter }) => (
                       <>
                         <Speedometer percentage={safetymeter} />
                         <Logs />
@@ -109,7 +109,7 @@ const Dashboard = () => {
                 path="camera4"
                 element={
                   <CameraData cameraName="camera4">
-                    {({ safetymeter, latitude, longitude }) => (
+                    {({ safetymeter }) => (
                       <>
                         <Speedometer percentage={safetymeter} />
                         <Logs />
@@ -138,7 +138,7 @@ const Dashboard = () => {
                 path="camera1"
                 element={
                   <CameraData cameraName="camera1">
-                    {({ safetymeter, latitude, longitude }) => (
+                    {({ latitude, longitude }) => (
                       <UserLocationMap lat={latitude} lon={longitude} />
                     )}
                   </CameraData>
@@ -148,7 +148,7 @@ const Dashboard = () => {
                 path="camera2"
                 element={
                   <CameraData cameraName="camera2">
-                    {({ safetymeter, latitude, longitude }) => (
+                    {({ latitude, longitude }) => (
                       <UserLocationMap lat={latitude} lon={longitude} />
                     )}
                   </CameraData>
@@ -158,7 +158,7 @@ const Dashboard = () => {
                 path="camera3"
                 element={
                   <CameraData cameraName="camera3">
-                    {({ safetymeter, latitude, longitude }) => (
+                    {({ latitude, longitude }) => (
                       <UserLocationMap lat={latitude} lon={longitude} />
                     )}
                   </CameraData>
@@ -168,7 +168,7 @@ const Dashboard = () => {
                 path="camera4"
                 element={
                   <CameraData cameraName="camera4">
-                    {({ safetymeter, latitude, longitude }) => (
+                    {({ latitude, longitude }) => (
                       <UserLocationMap lat={latitude} lon={longitude} />
                     )}
                   </CameraData>
