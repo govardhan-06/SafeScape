@@ -6,10 +6,7 @@ __all__ = ['inception_iccv']
 
 def inception_iccv(pretrained=True, debug=False, **kwargs):
     model = InceptionNet(**kwargs)
-    """
-        Pretrained model: 'https://github.com/Cadene/pretrained-models.pytorch/blob/master/pretrainedmodels/models/bninception.py'
-        Initializing with basedline models (trained BN-Inception) can obtain better results.
-    """
+    
     if pretrained:
         pretrained_dict = torch.load('model/bn_inception-52deb4733.pth')
         model_dict = model.state_dict()
