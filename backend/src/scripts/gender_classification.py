@@ -12,6 +12,7 @@ class GenderClassifier:
 
         # Load the pretrained model
         self.gender_classifier = InceptionNet(num_classes=35)  # num_classes should match the PETA dataset
+        self.gender_classifier.to(self.device)
         checkpoint = torch.load('./src/gender_classifier/peta_epoch_31.pth.tar', map_location=self.device)  # Load to GPU if available
 
         # Modify the keys in the checkpoint to remove the 'module.' prefix

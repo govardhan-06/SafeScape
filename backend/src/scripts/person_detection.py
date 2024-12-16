@@ -1,5 +1,5 @@
 import torch
-from torchvision.models.detection import fasterrcnn_resnet50_fpn
+from torchvision.models.detection import fasterrcnn_resnet50_fpn, FasterRCNN_ResNet50_FPN_Weights
 from torchvision.models import resnet18
 import torch.nn as nn
 from torchvision.transforms.functional import to_pil_image
@@ -13,7 +13,7 @@ from PIL import Image
 class PersonDetection:
     def __init__(self):
         # Load pre-trained Person Detection Model
-        self.person_detector = fasterrcnn_resnet50_fpn(pretrained=True)
+        self.person_detector = fasterrcnn_resnet50_fpn(weights=FasterRCNN_ResNet50_FPN_Weights.COCO_V1)  # Use the latest weights
         self.person_detector.eval()
 
         # Define image transformations
