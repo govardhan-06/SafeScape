@@ -1,4 +1,0 @@
-torch
-mediapipe
-opencv-python
-numpy
