@@ -1,6 +1,6 @@
 # SafeScape
 
-- **Pitch:** [Pitch-deck-content](https://docs.google.com/document/d/180blNcXaGP0Y6TliKAHLvY6mMpQaxQdncrtV5yz82J4/edit?usp=sharing)
+- **Pitch:** [SafeScape](https://docs.google.com/presentation/d/1VyD97cwQU6X8PZZKL91xTZaSp9cMFvu3/edit?usp=sharing&ouid=100396215887832693875&rtpof=true&sd=true)
 
 ## Problem Statement
 
