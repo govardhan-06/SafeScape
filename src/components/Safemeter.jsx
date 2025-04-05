@@ -3,6 +3,8 @@ import ReactSpeedometer from "react-d3-speedometer";
 import PropTypes from "prop-types";
 
 const Speedometer = ({ percentage }) => {
+  console.log(percentage);
+
   return (
     <div className="flex flex-col items-center justify-center p-6 space-y-4 rounded-lg ">
       <h2 className="text-xl font-bold">Safetymeter</h2>
