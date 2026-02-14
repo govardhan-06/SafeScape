@@ -57,15 +57,14 @@ class SpatialTransformBlock(nn.Module):
     def stn(self, x, theta):
         grid = F.affine_grid(theta, x.size())
         x = F.grid_sample(x, grid, padding_mode='border')
-        return x.cuda()
+        return x.to(x.device)
 
     def transform_theta(self, theta_i, region_idx):
-        theta = torch.zeros(theta_i.size(0), 2, 3)
+        theta = torch.zeros(theta_i.size(0), 2, 3, device=theta_i.device)
         theta[:,0,0] = torch.sigmoid(theta_i[:,0])
         theta[:,1,1] = torch.sigmoid(theta_i[:,1])
         theta[:,0,2] = torch.tanh(theta_i[:,2])
         theta[:,1,2] = torch.tanh(theta_i[:,3])
-        theta = theta.cuda()
         return theta
 
     def forward(self, features):
